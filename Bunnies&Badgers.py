@@ -56,8 +56,8 @@ def main():
         # 5 - clear the screen before drawing it again
         screen.fill(0)
         # 6 - draw the screen elements
-        for x in range(width/grass.get_width()+1):
-            for y in range(height/grass.get_height()+1):
+        for x in range(int(width/grass.get_width())+1):
+            for y in range(int(height/grass.get_height())+1):
                 screen.blit(grass,(x*100,y*100))
         screen.blit(castle,(0,30))
         screen.blit(castle,(0,135))
@@ -194,7 +194,7 @@ def main():
     if num_arrows <= 0:
         game_over_message = "You have run out of arrows!!! "
     game_over_message += "Score: "+str(accuracy)+"% (Accuracy) * "+str(elapsedtime/1000)+" (Time) = "+str(int(accuracy*elapsedtime/1000))
-    text = font.render(game_over_message, True, (0, 255, 0))
+    text = font.render(game_over_message, True, (0, 0, 0))
 
     textRect = text.get_rect()
     textRect.centerx = screen.get_rect().centerx
@@ -212,7 +212,7 @@ def main():
     global textx, texty, textx_size, texty_size
     global text2x, text2y, text2x_size, text2y_size
     bigfont = pygame.font.Font(None, 80)
-    text = bigfont.render('Play Again', 13, (0, 255, 0))
+    text = bigfont.render('Play Again', 13, (0,128,0))
     textx = width / 2 - text.get_width() / 2
     texty = height / 4 - text.get_height() / 2
     textx_size = text.get_width()
